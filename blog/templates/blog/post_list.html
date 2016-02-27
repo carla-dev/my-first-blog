@@ -5,23 +5,19 @@
 	<body>
 
 		<div>
-			<h1><a href="">Carla Blog</a></h1>
+			<h1><a href="">Tipos de Ecosistemas</a></h1>
 		</div>	
-	
-		<div>
-			<p>published: 27.02.2016, 14:37</p>
-			<h2><a href="">Mi primer post</a></h2>
-			<p>Django Girls</p>
-		</div>
 
-		<div>
-			<p>published: 27.02.2016, 15:37</p>
-			<h2><a href="">Mi segundo post</a></h2>
-			<p>febrero CDMX 2016</p>
-		</div>
+		{% for post in posts %}
+
+			<div>
+					<p>published: {{ post.published_date }}</p>
+					<h1><a href="">{{ post.title }}</a></h1>
+					<p>{{ post.text|linebreaks }}</p>
+				
+			</div>
+
+		{% endfor %}
 		
-	<p>Hi there!</p>
-	<p>It works!</p>
-
 	</body>
 </html>
